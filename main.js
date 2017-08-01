@@ -36,18 +36,15 @@ for (let i = 0; i < customers.results.length; i++) {
   // creating template literal
   const custInfoTemp = `
     <img src=${image} />
-    <div class="cust-info1">
-      <p class="nameFirst">${nameFirst}</p>
-      <p class="nameLast">${nameLast}</p>
-      <p class="email">${email}</p>
+    <p class="name">${nameFirst} ${nameLast}</p>
+    <p class="email">${email}</p>
     </div>
-    <div class="cust-info2">
+    <div class="cust-loc">
       <p class="locStreet">${locStreet}</p>
       <p class="locGlobal">${locCity} ${locState} ${locPostcode}</p>
-    </div>
-    <div class="cust-info3">
       <p class="phone">${phone}</p>
-      <p class="ssn">${ssn}</p>
+    </div>
+    <p class="ssn">${ssn}</p>
     </div>
   `
   let custInfoDiv = document.createElement("div");

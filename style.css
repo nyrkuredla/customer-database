@@ -2,6 +2,9 @@ body {
   font-family: Raleway, sans-serif;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .content-wrapper {
@@ -11,5 +14,62 @@ body {
 }
 
 h1 {
-  
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+#customer-info-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.customer-info {
+  min-width: 22%;
+  height: 30%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 0.8em;
+  line-height: 1.2em;
+}
+
+.customer-info img {
+  width: 210px;
+  flex-grow: 1;
+  margin: 0 auto;
+}
+
+.customer-info p {
+  text-align: center;
+}
+
+p.name {
+  text-transform: uppercase;
+  text-decoration: underline green;
+  font-size: 1.1em;
+  font-weight: bolder;
+  text-align: center;
+  width: 60%;
+  margin: 4% auto;
+
+}
+
+p.email {
+  font-size: 1.0em;
+  color: grey;
+  text-transform: uppercase;
+  margin: 4% auto;
+}
+
+div.cust-loc {
+  text-align: center;
+  line-height: 1.1em;
+  text-transform: capitalize;
+}
+
+p.ssn {
+  color: green;
 }
