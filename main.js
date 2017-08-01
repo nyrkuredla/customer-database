@@ -2,45 +2,17 @@
 const custInfoWrapper = document.getElementById("customer-info-wrapper");
 
 
-// creating new div to insert template into for each cust
-function createCustDiv () {
-  let custInfoDiv = document.createElement("div");
-  custInfoDiv.classList.add("customer-info");
-  custInfoWrapper.appendChild(custInfoDiv);
-  custInfoDiv.innerHTML = custInfoTemp;
-}
+// // creating new div to insert template into for each cust
+// function createCustDiv () {
+//   let custInfoDiv = document.createElement("div");
+//   custInfoDiv.classList.add("customer-info");
+//   custInfoWrapper.appendChild(custInfoDiv);
+//   custInfoDiv.innerHTML = custInfoTemp;
+// }
 
 // creating variables to populate customer info template literal
 let custPrefix = customers.results[0];
 
-const image = custPrefix.picture.medium;
-const nameFirst = custPrefix.name.first;
-const nameLast = custPrefix.name.last;
-const email = custPrefix.email;
-const locStreet = custPrefix.location.street;
-const locCity = custPrefix.location.city;
-const locState = custPrefix.location.state;
-const locPostcode = custPrefix.location.postcode;
-const phone = custPrefix.phone;
-const ssn = custPrefix.id.value;
-
-// creating template literal
-const custInfoTemp = `
-  <img src=${image} />
-  <div class="cust-info1">
-    <p class="nameFirst">${nameFirst}</p>
-    <p class="nameLast">${nameLast}</p>
-    <p class="email">${email}</p>
-  </div>
-  <div class="cust-info2">
-    <p class="locStreet">${locStreet}</p>
-    <p class="locGlobal">${locCity} ${locState} ${locPostcode}</p>
-  </div>
-  <div class="cust-info3">
-    <p class="phone">${phone}</p>
-    <p class="ssn">${ssn}</p>
-  </div>
-`
 
 // // function to add custInfoTemp to customer info div
 // function insertCustTemp () {
@@ -50,8 +22,39 @@ const custInfoTemp = `
 // creating new template literals and populating with custInfo from customer data array
 for (let i = 0; i < customers.results.length; i++) {
   custPrefix = customers.results[i];
-  console.log(custPrefix);
-  createCustDiv();
+  const image = custPrefix.picture.medium;
+  const nameFirst = custPrefix.name.first;
+  const nameLast = custPrefix.name.last;
+  const email = custPrefix.email;
+  const locStreet = custPrefix.location.street;
+  const locCity = custPrefix.location.city;
+  const locState = custPrefix.location.state;
+  const locPostcode = custPrefix.location.postcode;
+  const phone = custPrefix.phone;
+  const ssn = custPrefix.id.value;
+
+  // creating template literal
+  const custInfoTemp = `
+    <img src=${image} />
+    <div class="cust-info1">
+      <p class="nameFirst">${nameFirst}</p>
+      <p class="nameLast">${nameLast}</p>
+      <p class="email">${email}</p>
+    </div>
+    <div class="cust-info2">
+      <p class="locStreet">${locStreet}</p>
+      <p class="locGlobal">${locCity} ${locState} ${locPostcode}</p>
+    </div>
+    <div class="cust-info3">
+      <p class="phone">${phone}</p>
+      <p class="ssn">${ssn}</p>
+    </div>
+  `
+  let custInfoDiv = document.createElement("div");
+  custInfoDiv.classList.add("customer-info");
+  custInfoWrapper.appendChild(custInfoDiv);
+  custInfoDiv.innerHTML = custInfoTemp;
+
 }
 
 
